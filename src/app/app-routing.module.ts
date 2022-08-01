@@ -6,13 +6,13 @@ import { AuthGuard } from './guards/auth.guard';
 import { LoginGuard } from './guards/login.guard';
 
 const routes: Routes = [
-  {path: '', redirectTo: '/', pathMatch: 'full'},
-  {path: '', component: HomeComponent, canActivate: [AuthGuard]},
-  {path: 'login', component: LoginComponent, canActivate: [LoginGuard]}
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  { path: '', component: HomeComponent, canActivate: [AuthGuard] },
+  { path: 'login', component: LoginComponent, canActivate: [LoginGuard] },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
